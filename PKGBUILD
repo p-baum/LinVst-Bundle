@@ -24,40 +24,40 @@ package_linvst-bin() {
     pkgdesc="Linux Windows vst wrapper/bridge"
     conflicts=('linvst')
 
-	# Shared library
-	install -Dm755 "$srcdir/LinVst-$pkgver/linvst.so" "$pkgdir/usr/share/LinVst/linvst.so"
+        # Shared library
+    install -Dm755 "$srcdir/LinVst-$pkgver/linvst.so" "$pkgdir/usr/share/LinVst/linvst.so"
 
-	# Embedded
-	install -Dm755 "$srcdir/LinVst-$pkgver/lin-vst-server.exe" "$pkgdir/usr/bin/lin-vst-server.exe"
-	install -Dm755 "$srcdir/LinVst-$pkgver/lin-vst-server.exe.so" "$pkgdir/usr/bin/lin-vst-server.exe.so"
+    # Embedded
+    install -Dm755 "$srcdir/LinVst-$pkgver/lin-vst-server.exe" "$pkgdir/usr/bin/lin-vst-server.exe"
+    install -Dm755 "$srcdir/LinVst-$pkgver/lin-vst-server.exe.so" "$pkgdir/usr/bin/lin-vst-server.exe.so"
 
-	install -Dm755 "$srcdir/LinVst-$pkgver/lin-vst-server32.exe.so" "$pkgdir/usr/bin/lin-vst-server32.exe.so"
-	install -Dm755 "$srcdir/LinVst-$pkgver/lin-vst-server32.exe" "$pkgdir/usr/bin/lin-vst-server32.exe"
+    install -Dm755 "$srcdir/LinVst-$pkgver/lin-vst-server32.exe.so" "$pkgdir/usr/bin/lin-vst-server32.exe.so"
+    install -Dm755 "$srcdir/LinVst-$pkgver/lin-vst-server32.exe" "$pkgdir/usr/bin/lin-vst-server32.exe"
 
-	# Converter
-	install -Dm755 "$srcdir/LinVst-$pkgver/linvstconvert" "$pkgdir/usr/bin/linvstconvert"
+    # Converter
+    install -Dm755 "$srcdir/LinVst-$pkgver/linvstconvert" "$pkgdir/usr/bin/linvstconvert"
 }
 
 package_linvst3-bin() {
     pkgdesc="Linux Windows vst3 wrapper/bridge"
 
-	# Shared library
-	install -Dm755 "$srcdir/LinVst3-$pkgver/linvst3.so" "$pkgdir/usr/share/LinVst/linvst3.so"
+    # Shared library
+    install -Dm755 "$srcdir/LinVst3-$pkgver/linvst3.so" "$pkgdir/usr/share/LinVst/linvst3.so"
 
-	# Embedded
-	install -Dm755 "$srcdir/LinVst3-$pkgver/lin-vst3-server.exe" "$pkgdir/usr/bin/lin-vst3-server.exe"
-	install -Dm755 "$srcdir/LinVst3-$pkgver/lin-vst3-server.exe.so" "$pkgdir/usr/bin/lin-vst3-server.exe.so"
+    # Embedded
+    install -Dm755 "$srcdir/LinVst3-$pkgver/lin-vst3-server.exe" "$pkgdir/usr/bin/lin-vst3-server.exe"
+    install -Dm755 "$srcdir/LinVst3-$pkgver/lin-vst3-server.exe.so" "$pkgdir/usr/bin/lin-vst3-server.exe.so"
 
-	# Converter
-	install -Dm755 "$srcdir/LinVst3-$pkgver/linvst3convert" "$pkgdir/usr/bin/linvst3convert"
+    # Converter
+    install -Dm755 "$srcdir/LinVst3-$pkgver/linvst3convert" "$pkgdir/usr/bin/linvst3convert"
 
-	#test
-	install -Dm755 "$srcdir/LinVst3-$pkgver/TestVst3/testvst3.exe" "$pkgdir/usr/bin/testvst3.exe"
-	install -Dm755 "$srcdir/LinVst3-$pkgver/TestVst3/testvst3.exe.so" "$pkgdir/usr/bin/testvst3.exe.so"
+    #test
+    install -Dm755 "$srcdir/LinVst3-$pkgver/TestVst3/testvst3.exe" "$pkgdir/usr/bin/testvst3.exe"
+    install -Dm755 "$srcdir/LinVst3-$pkgver/TestVst3/testvst3.exe.so" "$pkgdir/usr/bin/testvst3.exe.so"
 }
 
 build() {
-	cd "$srcdir/linvstmanager-$linvstmanager_ver"
+    cd "$srcdir/linvstmanager-$linvstmanager_ver"
     mkdir build && cd build
     cmake ..
     make -j4
