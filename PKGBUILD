@@ -1,6 +1,10 @@
 # Maintainer: Kyle Bronsdon <kyle at silksow dot com>
 # Contributor: Mads Kjeldgaard <mail@madskjeldgaard.dk>
-pkgname=('linvst-bin' 'linvst3-bin' 'linvstmanager-git')
+pkgname=(
+    'linvst-bin'
+    'linvst3-bin'
+    'linvstmanager-git'
+)
 pkgver=4.9
 linvstmanager_ver=1.1.1
 pkgrel=1
@@ -9,16 +13,26 @@ arch=('x86_64')
 url="https://github.com/osxmidi/LinVst"
 license=('GPL')
 groups=('pro-audio')
-depends=('wine' 'gtk3')
-makedepends=('make' 'cmake' 'git')
-optdepends=('jack')
-source=("$url/releases/download/$pkgver/LinVst-$pkgver.zip"
-"https://github.com/osxmidi/LinVst3/releases/download/$pkgver/LinVst3-$pkgver.zip"
-"https://github.com/Goli4thus/linvstmanager/archive/refs/tags/v$linvstmanager_ver.zip"
+depends=(
+    'wine'
+    'gtk3'
 )
-md5sums=('bcd078785ae233fe2ea26b5c2950b0ff'
-         '1493a6e88b33d847cb653195b9d20c33'
-         '36d9540486a95d92b23dd5d6e8ededa7')
+makedepends=(
+    'make'
+    'cmake'
+    'git'
+)
+optdepends=('jack')
+source=(
+    "$url/releases/download/$pkgver/LinVst-$pkgver.zip"
+    "https://github.com/osxmidi/LinVst3/releases/download/$pkgver/LinVst3-$pkgver.zip"
+    "https://github.com/Goli4thus/linvstmanager/archive/refs/tags/v$linvstmanager_ver.zip"
+)
+md5sums=(
+    'bcd078785ae233fe2ea26b5c2950b0ff'
+    '1493a6e88b33d847cb653195b9d20c33'
+    '36d9540486a95d92b23dd5d6e8ededa7'
+)
 
 package_linvst-bin() {
     pkgdesc="Linux Windows vst wrapper/bridge"
