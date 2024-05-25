@@ -13,6 +13,7 @@ arch=('x86_64')
 url="https://github.com/osxmidi/LinVst"
 license=('GPL')
 groups=('pro-audio')
+conflicts=('linvst' 'linvstmanager')
 depends=(
     'wine'
     'gtk3'
